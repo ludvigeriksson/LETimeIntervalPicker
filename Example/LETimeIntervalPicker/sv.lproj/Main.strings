@@ -1,0 +1,33 @@
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "G4z-aY-WWM"; */
+"G4z-aY-WWM.title" = " ";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "JUh-bM-8FN"; */
+"JUh-bM-8FN.text" = "Detail";
+
+/* Class = "UILabel"; text = "Time interval"; ObjectID = "KT6-iu-ezF"; */
+"KT6-iu-ezF.text" = "Time interval";
+
+/* Class = "UILabel"; text = "Regular"; ObjectID = "Kh9-Me-t44"; */
+"Kh9-Me-t44.text" = "Regular";
+
+/* Class = "UIButton"; normalTitle = "Set random time"; ObjectID = "eXe-Fx-Zqd"; */
+"eXe-Fx-Zqd.normalTitle" = "Set random time";
+
+/* Class = "UILabel"; text = "Animated"; ObjectID = "hfz-xV-Kdl"; */
+"hfz-xV-Kdl.text" = "Animated";
+
+/* Class = "UILabel"; text = "Inside UITableView"; ObjectID = "mbg-Fb-Bpd"; */
+"mbg-Fb-Bpd.text" = "Inside UITableView";
+
+/* Class = "UILabel"; text = "Pick a time interval"; ObjectID = "qvd-9c-DfN"; */
+"qvd-9c-DfN.text" = "Pick a time interval";
+
+/* Class = "UINavigationItem"; title = "LETimeIntervalPicker"; ObjectID = "rWG-5j-ojP"; */
+"rWG-5j-ojP.title" = "LETimeIntervalPicker";
+
+/* Class = "UITableViewController"; title = "Inside"; ObjectID = "v2U-lP-kG1"; */
+"v2U-lP-kG1.title" = "Inside";
+
+/* Class = "UIViewController"; title = "Regular"; ObjectID = "xWm-fz-wed"; */
+"xWm-fz-wed.title" = "Regular";

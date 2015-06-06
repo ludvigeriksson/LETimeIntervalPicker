@@ -1,38 +1,24 @@
-#
-# Be sure to run `pod lib lint LETimeIntervalPicker.podspec' to ensure this is a
-# valid spec and remove all comments before submitting the spec.
-#
-# Any lines starting with a # are optional, but encouraged
-#
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "LETimeIntervalPicker"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of LETimeIntervalPicker."
+  s.version          = "1.0.0"
+  s.summary          = "A UIDatePicker for time intervals."
   s.description      = <<-DESC
-                       An optional longer description of LETimeIntervalPicker
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       LETimeIntervalPicker lets you pick a time interval with hours, minutes and seconds.
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/LETimeIntervalPicker"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/ludvigeriksson/LETimeIntervalPicker"
+  s.screenshots      = "http://i.imgur.com/qi9fHVN.png"
   s.license          = 'MIT'
   s.author           = { "Ludvig Eriksson" => "ludvigeriksson@icloud.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/LETimeIntervalPicker.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/ludvigeriksson/LETimeIntervalPicker.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/ludvigerikss0n'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    'LETimeIntervalPicker' => ['Pod/Assets/*.png']
+    'LETimeIntervalPicker' => ['Pod/Assets/**/*']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
 end

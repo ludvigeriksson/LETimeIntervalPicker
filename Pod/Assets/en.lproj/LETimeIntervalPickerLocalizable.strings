@@ -1,0 +1,19 @@
+/* 
+  LETimeIntervalPickerLocalizable.strings
+  Pods
+
+  Created by Ludvig Eriksson on 2015-06-05.
+
+*/
+
+"hours" = "hours";
+
+"hour" = "hour";
+
+"minutes" = "minutes";
+
+"minute" = "minute";
+
+"seconds" = "seconds";
+
+"second" = "second";

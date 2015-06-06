@@ -1,24 +1,37 @@
 //
 //  ViewController.swift
-//  LETimeIntervalPicker
+//  LETimeIntervalPickerExample
 //
-//  Created by Ludvig Eriksson on 06/05/2015.
-//  Copyright (c) 06/05/2015 Ludvig Eriksson. All rights reserved.
+//  Created by Ludvig Eriksson on 2015-06-04.
+//  Copyright (c) 2015 Ludvig Eriksson. All rights reserved.
 //
 
 import UIKit
+import LETimeIntervalPicker
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var picker: LETimeIntervalPicker!
+    @IBOutlet weak var animated: UISwitch!
+    
+    let formatter = NSDateComponentsFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        formatter.unitsStyle = .Abbreviated
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func updateLabel(sender: LETimeIntervalPicker) {
+        label.text = formatter.stringFromTimeInterval(sender.timeInterval)
     }
-
+    
+    @IBAction func setRandomTimeInterval() {
+        let random = NSTimeInterval(arc4random_uniform(60*60*24)) // Random time under 24 hours
+        if animated.on {
+            picker.setTimeIntervalAnimated(random)
+        } else {
+            picker.timeInterval = random
+        }
+    }
 }
-

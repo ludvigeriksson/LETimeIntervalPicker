@@ -1,0 +1,14 @@
+PODS:
+  - LETimeIntervalPicker (0.1.0)
+
+DEPENDENCIES:
+  - LETimeIntervalPicker (from `../`)
+
+EXTERNAL SOURCES:
+  LETimeIntervalPicker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  LETimeIntervalPicker: 78deb8378956f97822ce214e532839894c02798c
+
+COCOAPODS: 0.37.2

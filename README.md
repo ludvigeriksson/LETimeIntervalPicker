@@ -7,18 +7,21 @@
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+LETimeIntervalPicker sends a UIControlEvents.ValueChanged event when the user picks a time interval. Listen for this event (also connectable via storyboards).
 
-## Requirements
+## Localization
+
+Assuming you have added the languages to your project, LETimeIntervalPicker is localized into these languages:
+
+• en (English)
+• sv (Swedish)
 
 ## Installation
 
 LETimeIntervalPicker is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```ruby
 pod "LETimeIntervalPicker"
-```
 
 ## Author
 
