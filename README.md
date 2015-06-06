@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/LETimeIntervalPicker.svg?style=flat)](http://cocoapods.org/pods/LETimeIntervalPicker)
 [![Platform](https://img.shields.io/cocoapods/p/LETimeIntervalPicker.svg?style=flat)](http://cocoapods.org/pods/LETimeIntervalPicker)
 
+![Screenshot 1](/Screenshots/1.png?raw=true "Screenshot")
+
 ## Usage
 
 LETimeIntervalPicker sends a UIControlEvents.ValueChanged event when the user picks a time interval. Listen for this event (also connectable via storyboards).
