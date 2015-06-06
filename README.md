@@ -14,7 +14,6 @@ LETimeIntervalPicker sends a UIControlEvents.ValueChanged event when the user pi
 Assuming you have added the languages to your project, LETimeIntervalPicker is localized into these languages:
 
 • en (English)
-
 • sv (Swedish)
 
 ## Installation
