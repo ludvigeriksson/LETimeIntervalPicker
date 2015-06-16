@@ -19,11 +19,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.picker.componentOne = Components.Year
+        self.picker.componentTwo = .Month
+        self.picker.componentThree = .Week
+        self.picker.setup()
         formatter.unitsStyle = .Abbreviated
     }
     
     @IBAction func updateLabel(sender: LETimeIntervalPicker) {
         label.text = formatter.stringFromTimeInterval(sender.timeInterval)
+        
+//        label.text = "\(sender.timeIntervalAsHoursMinutesSeconds.hours) \(sender.timeIntervalAsHoursMinutesSeconds.minutes) \(sender.timeIntervalAsHoursMinutesSeconds.seconds)"
     }
     
     @IBAction func setRandomTimeInterval() {

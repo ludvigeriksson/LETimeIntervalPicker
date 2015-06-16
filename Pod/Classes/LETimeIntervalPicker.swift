@@ -8,6 +8,17 @@
 
 import UIKit
 
+
+public enum Components: Int {
+    case Hour = 0
+    case Minute
+    case Second
+    case Year
+    case Month
+    case Week
+    case Day
+}
+
 public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - Public API
@@ -29,7 +40,7 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
             return secondsToHoursMinutesSeconds(Int(timeInterval))
         }
     }
-
+    
     public func setTimeIntervalAnimated(interval: NSTimeInterval) {
         setPickerToTimeInterval(interval, animated: true)
     }
@@ -49,15 +60,21 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     
     private let pickerView = UIPickerView()
     
-    private let hourLabel = UILabel()
-    private let minuteLabel = UILabel()
-    private let secondLabel = UILabel()
+    private let labelOne = UILabel()
+    private let labelTwo = UILabel()
+    private let labelThree = UILabel()
+    
+    // Component type for each picker column (defaults to hour, minute, second)
+    public var componentOne: Components = .Hour
+    public var componentTwo: Components = .Minute
+    public var componentThree: Components = .Second
     
     // MARK: - Initialization
     
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+        
     }
     
     override public init(frame: CGRect) {
@@ -65,7 +82,34 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
         setup()
     }
     
-    private func setup() {
+    convenience public init(componentOne: Components) {
+        
+        self.init()
+        self.componentOne = componentOne
+        setup()
+    }
+    
+    convenience public init(componentOne: Components, componentTwo: Components) {
+        
+        self.init()
+        self.componentOne = componentOne
+        self.componentTwo = componentTwo
+        setup()
+    }
+    
+    //Use this init() to define a custom component type for each picker column
+    
+    convenience public init(componentOne: Components, componentTwo: Components,
+        componentThree: Components) {
+            
+            self.init()
+            self.componentOne = componentOne
+            self.componentTwo = componentTwo
+            self.componentThree = componentThree
+            setup()
+    }
+    
+    public func setup() {
         setupLocalizations()
         setupLabels()
         calculateNumberWidth()
@@ -74,22 +118,42 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     }
     
     private func setupLabels() {
-        hourLabel.text = hoursString
-        addSubview(hourLabel)
-        minuteLabel.text = minutesString
-        addSubview(minuteLabel)
-        secondLabel.text = secondsString
-        addSubview(secondLabel)
+        
+        labelOne.text = getLabelTextForComponent(componentOne)
+        addSubview(labelOne)
+        labelTwo.text = getLabelTextForComponent(componentTwo)
+        addSubview(labelTwo)
+        labelThree.text = getLabelTextForComponent(componentThree)
+        addSubview(labelThree)
         updateLabels()
     }
     
+    private func getLabelTextForComponent(component: Components) -> String {
+        switch component {
+        case .Hour:
+            return hoursString
+        case .Minute:
+            return minutesString
+        case .Second:
+            return secondsString
+        case .Year:
+            return yearsString
+        case .Month:
+            return monthsString
+        case .Week:
+            return weeksString
+        case .Day:
+            return daysString
+        }
+    }
+    
     private func updateLabels() {
-        hourLabel.font = font
-        hourLabel.sizeToFit()
-        minuteLabel.font = font
-        minuteLabel.sizeToFit()
-        secondLabel.font = font
-        secondLabel.sizeToFit()
+        labelOne.font = font
+        labelOne.sizeToFit()
+        labelTwo.font = font
+        labelTwo.sizeToFit()
+        labelThree.font = font
+        labelThree.sizeToFit()
     }
     
     private func calculateNumberWidth() {
@@ -107,11 +171,11 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     
     func calculateTotalPickerWidth() {
         // Used to position labels
-
+        
         totalPickerWidth = 0
-        totalPickerWidth += hourLabel.bounds.width
-        totalPickerWidth += minuteLabel.bounds.width
-        totalPickerWidth += secondLabel.bounds.width
+        totalPickerWidth += labelOne.bounds.width
+        totalPickerWidth += labelTwo.bounds.width
+        totalPickerWidth += labelThree.bounds.width
         totalPickerWidth += standardComponentSpacing * 2
         totalPickerWidth += extraComponentSpacing * 3
         totalPickerWidth += labelSpacing * 3
@@ -162,9 +226,10 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     
     // MARK: - Layout
     
+    
     private var totalPickerWidth: CGFloat = 0
     private var numberWidth: CGFloat = 20               // Width of UILabel displaying a two digit number with standard font
-
+    
     private let standardComponentSpacing: CGFloat = 5   // A UIPickerView has a 5 point space between components
     private let extraComponentSpacing: CGFloat = 10     // Add an additional 10 points between the components
     private let labelSpacing: CGFloat = 5               // Spacing between picker numbers and labels
@@ -174,15 +239,15 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
         
         // Reposition labels
         
-        hourLabel.center.y = CGRectGetMidY(pickerView.frame)
-        minuteLabel.center.y = CGRectGetMidY(pickerView.frame)
-        secondLabel.center.y = CGRectGetMidY(pickerView.frame)
+        labelOne.center.y = CGRectGetMidY(pickerView.frame)
+        labelTwo.center.y = CGRectGetMidY(pickerView.frame)
+        labelThree.center.y = CGRectGetMidY(pickerView.frame)
         
         let pickerMinX = CGRectGetMidX(bounds) - totalPickerWidth / 2
-        hourLabel.frame.origin.x = pickerMinX + numberWidth + labelSpacing
+        labelOne.frame.origin.x = pickerMinX + numberWidth + labelSpacing
         let space = standardComponentSpacing + extraComponentSpacing + numberWidth + labelSpacing
-        minuteLabel.frame.origin.x = CGRectGetMaxX(hourLabel.frame) + space
-        secondLabel.frame.origin.x = CGRectGetMaxX(minuteLabel.frame) + space
+        labelTwo.frame.origin.x = CGRectGetMaxX(labelOne.frame) + space
+        labelThree.frame.origin.x = CGRectGetMaxX(labelTwo.frame) + space
     }
     
     // MARK: - Picker view data source
@@ -192,13 +257,23 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     }
     
     public func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch Components(rawValue: component)! {
+        switch Components(rawValue: self.getComponentTypeForPickerComponentPosition(component))! {
         case .Hour:
             return 24
         case .Minute:
             return 60
         case .Second:
             return 60
+        case .Year:
+            return 100
+        case .Month:
+            return 12
+        case .Week:
+            return 52
+        case .Day:
+            return 365
+        default:
+            return -1
         }
     }
     
@@ -206,14 +281,18 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     
     public func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         let labelWidth: CGFloat
-        switch Components(rawValue: component)! {
-        case .Hour:
-            labelWidth = hourLabel.bounds.width
-        case .Minute:
-            labelWidth = minuteLabel.bounds.width
-        case .Second:
-            labelWidth = secondLabel.bounds.width
+        
+        switch (component) {
+        case 0:
+            labelWidth = labelOne.bounds.width
+        case 1:
+            labelWidth = labelTwo.bounds.width
+        case 2:
+            labelWidth = labelThree.bounds.width
+        default:
+            labelWidth = 0.0
         }
+        
         return numberWidth + labelWidth + labelSpacing + extraComponentSpacing
     }
     
@@ -248,30 +327,95 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     public func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if row == 1 {
             // Change label to singular
-            switch Components(rawValue: component)! {
-            case .Hour:
-                hourLabel.text = hourString
-            case .Minute:
-                minuteLabel.text = minuteString
-            case .Second:
-                secondLabel.text = secondString
+            
+            switch (component) {
+            case 0:
+                labelOne.text = self.getComponentSingularTextForPickerComponentPosition(component)
+            case 1:
+                labelTwo.text = self.getComponentSingularTextForPickerComponentPosition(component)
+            case 2:
+                labelThree.text = self.getComponentSingularTextForPickerComponentPosition(component)
+            default:
+                break
             }
+            
         } else {
             // Change label to plural
-            switch Components(rawValue: component)! {
-            case .Hour:
-                hourLabel.text = hoursString
-            case .Minute:
-                minuteLabel.text = minutesString
-            case .Second:
-                secondLabel.text = secondsString
+            
+            switch (component) {
+            case 0:
+                labelOne.text = self.getComponentPluralTextForPickerComponentPosition(component)
+            case 1:
+                labelTwo.text = self.getComponentPluralTextForPickerComponentPosition(component)
+            case 2:
+                labelThree.text = self.getComponentPluralTextForPickerComponentPosition(component)
+            default:
+                break
             }
+            
         }
         
         sendActionsForControlEvents(.ValueChanged)
     }
     
     // MARK: - Helpers
+    
+    private func getComponentTypeForPickerComponentPosition(componentPostiion: Int) -> Int {
+        
+        switch (componentPostiion) {
+        case 0:
+            return self.componentOne.rawValue
+        case 1:
+            return self.componentTwo.rawValue
+        case 2:
+            return self.componentThree.rawValue
+        default:
+            return -1
+        }
+        
+    }
+    
+    private func getComponentPluralTextForPickerComponentPosition(componentPosition: Int) -> String {
+        
+        switch Components(rawValue: self.getComponentTypeForPickerComponentPosition(componentPosition))! {
+        case .Hour:
+            return hoursString
+        case .Minute:
+            return minutesString
+        case .Second:
+            return secondsString
+        case .Year:
+            return yearsString
+        case .Month:
+            return monthsString
+        case .Week:
+            return weeksString
+        case .Day:
+            return daysString
+        }
+        
+    }
+    
+    private func getComponentSingularTextForPickerComponentPosition(componentPosition: Int) -> String {
+        
+        switch Components(rawValue: self.getComponentTypeForPickerComponentPosition(componentPosition))! {
+        case .Hour:
+            return hourString
+        case .Minute:
+            return minuteString
+        case .Second:
+            return secondString
+        case .Year:
+            return yearString
+        case .Month:
+            return monthString
+        case .Week:
+            return weekString
+        case .Day:
+            return dayString
+        }
+        
+    }
     
     private func setPickerToTimeInterval(interval: NSTimeInterval, animated: Bool) {
         let time = secondsToHoursMinutesSeconds(Int(interval))
@@ -287,12 +431,6 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
-    private enum Components: Int {
-        case Hour = 0
-        case Minute
-        case Second
-    }
-    
     // MARK: - Localization
     
     private var hoursString     = "hours"
@@ -301,6 +439,14 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     private var minuteString    = "minute"
     private var secondsString   = "seconds"
     private var secondString    = "second"
+    private var yearsString     = "years"
+    private var yearString      = "year"
+    private var monthsString    = "months"
+    private var monthString     = "month"
+    private var weeksString     = "weeks"
+    private var weekString      = "week"
+    private var daysString      = "days"
+    private var dayString       = "day"
     
     private func setupLocalizations() {
         
@@ -324,5 +470,29 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
         
         secondString = NSLocalizedString("second", tableName: tableName, bundle: bundle,
             comment: "A singular alternative for the seconds text.")
+        
+        yearsString = NSLocalizedString("years", tableName: tableName, bundle: bundle,
+            comment: "The text displayed next to the years component of the picker.")
+        
+        yearString = NSLocalizedString("year", tableName: tableName, bundle: bundle,
+            comment: "A singular alternative for the years text.")
+        
+        monthsString = NSLocalizedString("months", tableName: tableName, bundle: bundle,
+            comment: "The text displayed next to the months component of the picker.")
+        
+        monthString = NSLocalizedString("month", tableName: tableName, bundle: bundle,
+            comment: "A singular alternative for the months text.")
+        
+        weeksString = NSLocalizedString("weeks", tableName: tableName, bundle: bundle,
+            comment: "The text displayed next to the weeks component of the picker.")
+        
+        weekString = NSLocalizedString("week", tableName: tableName, bundle: bundle,
+            comment: "A singular alternative for the weeks text.")
+        
+        daysString = NSLocalizedString("days", tableName: tableName, bundle: bundle,
+            comment: "The text displayed next to the days component of the picker.")
+        
+        dayString = NSLocalizedString("day", tableName: tableName, bundle: bundle,
+            comment: "A singular alternative for the days text.")
     }
 }
