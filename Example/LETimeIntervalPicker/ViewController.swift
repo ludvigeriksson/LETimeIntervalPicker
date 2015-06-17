@@ -19,23 +19,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.picker.componentOne = .Week
-        self.picker.componentTwo = .Second
-        self.picker.componentThree = .Day
+        self.picker.componentOne = .None
+        self.picker.componentTwo = .Year
+        self.picker.componentThree = .Hour
         self.picker.setup()
         formatter.unitsStyle = .Abbreviated
     }
     
     @IBAction func updateLabel(sender: LETimeIntervalPicker) {
         label.text = formatter.stringFromTimeInterval(sender.timeInterval)
-        
-//        label.text = "\(sender.timeIntervalAsComponentTypes.valueOne) \(sender.timeIntervalAsComponentTypes.valueTwo) \(sender.timeIntervalAsComponentTypes.valueThree)"
+
     }
     
     @IBAction func setRandomTimeInterval() {
         let random = NSTimeInterval(arc4random_uniform(60*60*24)) // Random time under 24 hours
         if animated.on {
             picker.setTimeIntervalAnimated(random)
+
         } else {
             picker.timeInterval = random
         }

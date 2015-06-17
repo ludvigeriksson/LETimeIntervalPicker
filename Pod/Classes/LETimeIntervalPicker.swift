@@ -21,7 +21,6 @@ public enum Components: Int {
     case Day
 }
 
-
 public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - Public API
@@ -68,18 +67,22 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
         get {
             return self.getTimeIntervalAsComponentTypes()
         }
+        
+        set {
+            self.setPickerComponentsToValues(newValue.valueOne.toInt()!, componentTwoValue: newValue.valueTwo.toInt()!, componentThreeValue: newValue.valueThree.toInt()!, animated: false)
+        }
     }
-    
-//    public var timeIntervalAsHoursMinutesSeconds: (hours: Int, minutes: Int, seconds: Int) {
-//        get {
-//            return secondsToHoursMinutesSeconds(Int(timeInterval))
-//        }
-//    }
     
     //TODO: Have a more general 'setPickerToTimeInterval()'
     
     public func setTimeIntervalAnimated(interval: NSTimeInterval) {
         setPickerToTimeInterval(interval, animated: true)
+    }
+    
+    public func setPickerComponentsToValuesAnimated(componentOneValue: String, componentTwoValue: String,
+        componentThreeValue: String) {
+            
+            self.setPickerComponentsToValues(componentOneValue.toInt()!, componentTwoValue: componentTwoValue.toInt()!, componentThreeValue: componentThreeValue.toInt()!, animated: true)
     }
     
     // Note that setting a font that makes the picker wider
@@ -335,7 +338,7 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
             break
             
         default:
-            println("Unhandled numberOfComponents (\(self.numberOfComponents)) in layoutSubviews()")
+            println("Unhandled numberOfComponents (\(self.numberOfComponents)) in 'layoutSubviews()'")
             break
         }
     }
@@ -585,13 +588,58 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     }
     
     private func setPickerToTimeInterval(interval: NSTimeInterval, animated: Bool) {
+        
         let time = secondsToHoursMinutesSeconds(Int(interval))
-        pickerView.selectRow(time.hours, inComponent: 0, animated: animated)
-        pickerView.selectRow(time.minutes, inComponent: 1, animated: animated)
-        pickerView.selectRow(time.seconds, inComponent: 2, animated: animated)
-        self.pickerView(pickerView, didSelectRow: time.hours, inComponent: 0)
-        self.pickerView(pickerView, didSelectRow: time.minutes, inComponent: 1)
-        self.pickerView(pickerView, didSelectRow: time.seconds, inComponent: 2)
+
+        switch self.numberOfComponents {
+        case 1:
+            pickerView.selectRow(time.hours, inComponent: 0, animated: animated)
+            self.pickerView(pickerView, didSelectRow: time.hours, inComponent: 0)
+            break
+        case 2:
+            pickerView.selectRow(time.hours, inComponent: 0, animated: animated)
+            pickerView.selectRow(time.minutes, inComponent: 1, animated: animated)
+            self.pickerView(pickerView, didSelectRow: time.hours, inComponent: 0)
+            self.pickerView(pickerView, didSelectRow: time.minutes, inComponent: 1)
+            break
+        case 3:
+            pickerView.selectRow(time.hours, inComponent: 0, animated: animated)
+            pickerView.selectRow(time.minutes, inComponent: 1, animated: animated)
+            pickerView.selectRow(time.seconds, inComponent: 2, animated: animated)
+            self.pickerView(pickerView, didSelectRow: time.hours, inComponent: 0)
+            self.pickerView(pickerView, didSelectRow: time.minutes, inComponent: 1)
+            self.pickerView(pickerView, didSelectRow: time.seconds, inComponent: 2)
+            break
+        default:
+            break
+        }
+    }
+    
+    private func setPickerComponentsToValues(componentOneValue: Int, componentTwoValue: Int,
+        componentThreeValue: Int, animated: Bool) {
+        
+            switch self.numberOfComponents {
+            case 1:
+                pickerView.selectRow(componentOneValue, inComponent: 0, animated: animated)
+                self.pickerView(pickerView, didSelectRow: componentOneValue, inComponent: 0)
+                break
+            case 2:
+                pickerView.selectRow(componentOneValue, inComponent: 0, animated: animated)
+                pickerView.selectRow(componentTwoValue, inComponent: 1, animated: animated)
+                self.pickerView(pickerView, didSelectRow: componentOneValue, inComponent: 0)
+                self.pickerView(pickerView, didSelectRow: componentTwoValue, inComponent: 1)
+                break
+            case 3:
+                pickerView.selectRow(componentOneValue, inComponent: 0, animated: animated)
+                pickerView.selectRow(componentTwoValue, inComponent: 1, animated: animated)
+                pickerView.selectRow(componentThreeValue, inComponent: 2, animated: animated)
+                self.pickerView(pickerView, didSelectRow: componentOneValue, inComponent: 0)
+                self.pickerView(pickerView, didSelectRow: componentTwoValue, inComponent: 1)
+                self.pickerView(pickerView, didSelectRow: componentThreeValue, inComponent: 2)
+                break
+            default:
+                break
+            }
     }
     
     private func secondsToHoursMinutesSeconds(seconds : Int) -> (hours: Int, minutes: Int, seconds: Int) {
