@@ -570,7 +570,7 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
         case .Minute:
             return (self.pickerView.selectedRowInComponent(componentsPosition) * 60)
         case .Second:
-            return (self.pickerView.selectedRowInComponent(componentsPosition) * 60 * 60)
+            return (self.pickerView.selectedRowInComponent(componentsPosition))
         case .Year:
             return (self.pickerView.selectedRowInComponent(componentsPosition) * 365 * 24 * 60 * 60)
         case .Month:
