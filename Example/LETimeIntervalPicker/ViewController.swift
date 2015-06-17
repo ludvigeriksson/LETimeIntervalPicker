@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.picker.componentOne = .Week
         self.picker.componentTwo = .Second
-        self.picker.componentThree = .Minute
+        self.picker.componentThree = .Day
         self.picker.setup()
         formatter.unitsStyle = .Abbreviated
     }
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     @IBAction func updateLabel(sender: LETimeIntervalPicker) {
         label.text = formatter.stringFromTimeInterval(sender.timeInterval)
         
-//        label.text = "\(sender.timeIntervalAsHoursMinutesSeconds.hours) \(sender.timeIntervalAsHoursMinutesSeconds.minutes) \(sender.timeIntervalAsHoursMinutesSeconds.seconds)"
+//        label.text = "\(sender.timeIntervalAsComponentTypes.valueOne) \(sender.timeIntervalAsComponentTypes.valueTwo) \(sender.timeIntervalAsComponentTypes.valueThree)"
     }
     
     @IBAction func setRandomTimeInterval() {
