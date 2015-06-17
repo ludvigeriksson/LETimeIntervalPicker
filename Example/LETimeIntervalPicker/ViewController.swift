@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.picker.componentOne = Components.Year
-        self.picker.componentTwo = .None
+        self.picker.componentOne = .Year
+        self.picker.componentTwo = .Second
         self.picker.componentThree = .None
         self.picker.setup()
         formatter.unitsStyle = .Abbreviated
