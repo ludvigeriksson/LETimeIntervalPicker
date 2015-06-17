@@ -26,34 +26,35 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     // MARK: - Public API
     
     
-    
-    //TODO: Need year/month/week/day timeInterval variable for storing/displaying the selected values.
-    
-    
     public var timeInterval: NSTimeInterval {
         get {
             
-            if let numOfComponents = self.componentsArray?.count {
+            if let safeComponentsArray = self.componentsArray {
                 
-                switch numOfComponents {
+                var numberOne = 0
+                var numberTwo = 0
+                var numberThree = 0
+                
+                switch safeComponentsArray.count {
                     
                 case 1:
                     
-                    let hours = pickerView.selectedRowInComponent(0) * 60 * 60
-                    return NSTimeInterval(hours)
+                    numberOne = self.convertComponentsDurationToSeconds(0)
+                    return NSTimeInterval(numberOne)
                     
                 case 2:
                     
-                    let hours = pickerView.selectedRowInComponent(0) * 60 * 60
-                    let minutes = pickerView.selectedRowInComponent(1) * 60
-                    return NSTimeInterval(hours + minutes)
+                    numberOne = self.convertComponentsDurationToSeconds(0)
+                    numberTwo = self.convertComponentsDurationToSeconds(1)
+                    numberThree = self.convertComponentsDurationToSeconds(2)
+                    return NSTimeInterval(numberOne + numberTwo)
                     
                 case 3:
                     
-                    let hours = pickerView.selectedRowInComponent(0) * 60 * 60
-                    let minutes = pickerView.selectedRowInComponent(1) * 60
-                    let seconds = pickerView.selectedRowInComponent(2)
-                    return NSTimeInterval(hours + minutes + seconds)
+                    numberOne = self.convertComponentsDurationToSeconds(0)
+                    numberTwo = self.convertComponentsDurationToSeconds(1)
+                    numberThree = self.convertComponentsDurationToSeconds(2)
+                    return NSTimeInterval(numberOne + numberTwo + numberThree)
                     
                     
                 default:
@@ -556,6 +557,30 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
             return dayString
         case .None:
             return ""
+        }
+        
+    }
+    
+    private func convertComponentsDurationToSeconds(componentsPosition: Int) -> Int {
+        
+        switch Components(rawValue: self.getComponentTypeForPickerComponentPosition(componentsPosition))! {
+            // Convert everything to seconds.
+        case .Hour:
+            return (self.pickerView.selectedRowInComponent(componentsPosition) * 60 * 60)
+        case .Minute:
+            return (self.pickerView.selectedRowInComponent(componentsPosition) * 60)
+        case .Second:
+            return (self.pickerView.selectedRowInComponent(componentsPosition) * 60 * 60)
+        case .Year:
+            return (self.pickerView.selectedRowInComponent(componentsPosition) * 365 * 24 * 60 * 60)
+        case .Month:
+            return (self.pickerView.selectedRowInComponent(componentsPosition) * 30 * 24 * 60 * 60)
+        case .Week:
+            return (self.pickerView.selectedRowInComponent(componentsPosition) * 7 * 24 * 60 * 60)
+        case .Day:
+            return (self.pickerView.selectedRowInComponent(componentsPosition) * 24 * 60 * 60)
+        default:
+            return 0
         }
         
     }
