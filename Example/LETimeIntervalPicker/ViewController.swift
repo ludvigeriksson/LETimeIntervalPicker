@@ -19,9 +19,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.picker.componentOne = .Year
+        self.picker.componentOne = .Week
         self.picker.componentTwo = .Second
-        self.picker.componentThree = .None
+        self.picker.componentThree = .Minute
         self.picker.setup()
         formatter.unitsStyle = .Abbreviated
     }

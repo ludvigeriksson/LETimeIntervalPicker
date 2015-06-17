@@ -11,7 +11,7 @@ import UIKit
 
 public enum Components: Int {
     case None = -1
-    case Hour = 0
+    case Hour
     case Minute
     case Second
     case Year
@@ -24,6 +24,11 @@ public enum Components: Int {
 public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - Public API
+    
+    
+    
+    //TODO: Need year/month/week/day timeInterval variable for storing/displaying the selected values.
+    
     
     public var timeInterval: NSTimeInterval {
         get {
@@ -97,9 +102,9 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     private let labelThree = UILabel()
     
     // Component type for each picker column (defaults to hour, minute, second)
-    public var componentOne: Components
-    public var componentTwo: Components
-    public var componentThree: Components
+    public var componentOne: Components = .None
+    public var componentTwo: Components = .None
+    public var componentThree: Components = .None
     private var componentsArray: [Components]?
     
     // MARK: - Initialization
@@ -324,7 +329,6 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
                 break
                 
             case 2:
-//                numberWidth + labelWidth + labelSpacing + extraComponentSpacing
                 
                 labelOne.center.y = CGRectGetMidY(pickerView.frame)
                 labelTwo.center.y = CGRectGetMidY(pickerView.frame)
@@ -365,7 +369,6 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     public func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         
         if let numOfComponents = self.componentsArray?.count {
-            
             return numOfComponents
         }
         
@@ -443,6 +446,7 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     }
     
     public func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         if row == 1 {
             // Change label to singular
             
@@ -478,7 +482,6 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     
     // MARK: - Helpers
     
-    //TODO: Fix Break - gets wrong componentType because positions are up in the air.
     private func getComponentTypeForPickerComponentPosition(componentPostiion: Int) -> Int {
         
         switch (componentPostiion) {
