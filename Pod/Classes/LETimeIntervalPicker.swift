@@ -79,10 +79,12 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
         setPickerToTimeInterval(interval, animated: true)
     }
     
-    public func setPickerComponentsToValuesAnimated(componentOneValue: String, componentTwoValue: String,
-        componentThreeValue: String) {
+    public func setPickerComponentsToValuesAnimated(componentOneValue: String?, componentTwoValue: String?,
+        componentThreeValue: String?) {
             
-            self.setPickerComponentsToValues(componentOneValue.toInt()!, componentTwoValue: componentTwoValue.toInt()!, componentThreeValue: componentThreeValue.toInt()!, animated: true)
+            
+            
+            self.setPickerComponentsToValues(componentOneValue?.toInt(), componentTwoValue: componentTwoValue?.toInt(), componentThreeValue: componentThreeValue?.toInt(), animated: true)
     }
     
     // Note that setting a font that makes the picker wider
@@ -615,27 +617,27 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
         }
     }
     
-    private func setPickerComponentsToValues(componentOneValue: Int, componentTwoValue: Int,
-        componentThreeValue: Int, animated: Bool) {
+    private func setPickerComponentsToValues(componentOneValue: Int?, componentTwoValue: Int?,
+        componentThreeValue: Int?, animated: Bool) {
         
+            
             switch self.numberOfComponents {
             case 1:
-                pickerView.selectRow(componentOneValue, inComponent: 0, animated: animated)
-                self.pickerView(pickerView, didSelectRow: componentOneValue, inComponent: 0)
+                pickerView.selectRow(componentOneValue!, inComponent: 0, animated: animated)
+                self.pickerView(pickerView, didSelectRow: componentOneValue!, inComponent: 0)
                 break
             case 2:
-                pickerView.selectRow(componentOneValue, inComponent: 0, animated: animated)
-                pickerView.selectRow(componentTwoValue, inComponent: 1, animated: animated)
-                self.pickerView(pickerView, didSelectRow: componentOneValue, inComponent: 0)
-                self.pickerView(pickerView, didSelectRow: componentTwoValue, inComponent: 1)
+                pickerView.selectRow(componentOneValue!, inComponent: 0, animated: animated)
+                pickerView.selectRow(componentTwoValue!, inComponent: 1, animated: animated)
+                self.pickerView(pickerView, didSelectRow: componentOneValue!, inComponent: 1)
                 break
             case 3:
-                pickerView.selectRow(componentOneValue, inComponent: 0, animated: animated)
-                pickerView.selectRow(componentTwoValue, inComponent: 1, animated: animated)
-                pickerView.selectRow(componentThreeValue, inComponent: 2, animated: animated)
-                self.pickerView(pickerView, didSelectRow: componentOneValue, inComponent: 0)
-                self.pickerView(pickerView, didSelectRow: componentTwoValue, inComponent: 1)
-                self.pickerView(pickerView, didSelectRow: componentThreeValue, inComponent: 2)
+                pickerView.selectRow(componentOneValue!, inComponent: 0, animated: animated)
+                pickerView.selectRow(componentTwoValue!, inComponent: 1, animated: animated)
+                pickerView.selectRow(componentThreeValue!, inComponent: 2, animated: animated)
+                self.pickerView(pickerView, didSelectRow: componentOneValue!, inComponent: 0)
+                self.pickerView(pickerView, didSelectRow: componentTwoValue!, inComponent: 1)
+                self.pickerView(pickerView, didSelectRow: componentThreeValue!, inComponent: 2)
                 break
             default:
                 break
