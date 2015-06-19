@@ -24,12 +24,14 @@ class ViewController: UIViewController {
     
     @IBAction func updateLabel(sender: LETimeIntervalPicker) {
         label.text = formatter.stringFromTimeInterval(sender.timeInterval)
+
     }
     
     @IBAction func setRandomTimeInterval() {
         let random = NSTimeInterval(arc4random_uniform(60*60*24)) // Random time under 24 hours
         if animated.on {
             picker.setTimeIntervalAnimated(random)
+
         } else {
             picker.timeInterval = random
         }
