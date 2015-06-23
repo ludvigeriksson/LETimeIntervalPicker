@@ -10,15 +10,103 @@ import UIKit
 
 // MARK: - Public Components Enum
 
-public enum Components: Int {
-    case None = -1
-    case Hour
-    case Minute
-    case Second
-    case Year
-    case Month
-    case Week
-    case Day
+/**
+Use the `Components` enum to specify the type of time-interval/duration that you'd like the row to display. 
+
+Usage:
+
+    //specifies that componentOne will be in years with 20 rows.
+    self.picker.componentOne = .Year(20)
+    //specifies that componentTwo will be in hours with 13 rows.
+    self.picker.componentTwo = .Hours(13)
+    //specifies that componentThree will be in minutes and will use the default value (60 rows)
+    self.picker.componentThree = .Minutes(nil)
+    //makes it so there will be no componentThree
+    self.picker.componentThree = .None
+
+The supported time-interval/duration types are:
+
+- .Hour
+- .Minute
+- .Second
+- .Year
+- .Month
+- .Week
+- .Day
+- .None (makes it so no component)
+*/
+public enum Components: Hashable {
+    ///Use to specify no component.
+    case None
+    ///Set the argument to `nil` to use the default value of 24 rows
+    case Hour(Int?)
+    ///Set the argument to `nil` to use the default value of 60 rows
+    case Minute(Int?)
+    ///Set the argument to `nil` to use the default value of 60 rows
+    case Second(Int?)
+    ///Set the argument to `nil` to use the default value of 100 rows
+    case Year(Int?)
+    ///Set the argument to `nil` to use the default value of 12 rows
+    case Month(Int?)
+    ///Set the argument to `nil` to use the default value of 52 rows
+    case Week(Int?)
+    ///Set the argument to `nil` to use the default value of 7 rows
+    case Day(Int?)
+    
+    
+    public var hashValue : Int {
+        return self.toInt()
+    }
+    
+    ///The default row count for the Component, if there wasn't one specified.
+    public var defaultRowCount : Int {
+        switch self {
+        case .Hour(nil):
+            return 24
+        case .Minute(nil):
+            return 60
+        case .Second(nil):
+            return 60
+        case .Year(nil):
+            return 100
+        case .Month(nil):
+            return 12
+        case .Week(nil):
+            return 52
+        case .Day(nil):
+            return 7
+        default:
+            return -1
+        }
+    }
+    
+    private func toInt() -> Int {
+        switch self {
+        case .None:
+            return -1
+        case .Hour:
+            return 0
+        case .Minute:
+            return 1
+        case .Second:
+            return 2
+        case .Year:
+            return 3
+        case .Month:
+            return 4
+        case .Week:
+            return 5
+        case .Day:
+            return 6
+        }
+        
+    }
+    
+}
+
+/// Overide equality operator so Components Enum conforms to Hashable
+public func == (lhs: Components, rhs: Components) -> Bool {
+    return lhs.toInt() == rhs.toInt()
 }
 
 public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerViewDelegate {
@@ -115,18 +203,18 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     // MARK: - Initialization
     
     required public init(coder aDecoder: NSCoder) {
-        self.componentOne = .Hour
-        self.componentTwo = .Minute
-        self.componentThree = .Second
+        self.componentOne = .Hour(24)
+        self.componentTwo = .Minute(60)
+        self.componentThree = .Second(60)
         super.init(coder: aDecoder)
         setup()
         
     }
     
     override public init(frame: CGRect) {
-        self.componentOne = .Hour
-        self.componentTwo = .Minute
-        self.componentThree = .Second
+        self.componentOne = .Hour(24)
+        self.componentTwo = .Minute(60)
+        self.componentThree = .Second(60)
         super.init(frame: frame)
         setup()
     }
@@ -352,23 +440,26 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     }
     
     public func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch Components(rawValue: self.getComponentTypeForPickerComponentPosition(component))! {
-        case .Hour:
-            return 24
-        case .Minute:
-            return 60
-        case .Second:
-            return 60
-        case .Year:
-            return 100
-        case .Month:
-            return 12
-        case .Week:
-            return 52
-        case .Day:
-            return 7
+        
+        let comp = self.getComponentForPickerComponentPosition(component)
+        
+        switch comp {
+        case let .Hour(numberOfRows) where numberOfRows != nil:
+            return numberOfRows!
+        case let .Minute(numberOfRows) where numberOfRows != nil:
+            return numberOfRows!
+        case let .Second(numberOfRows) where numberOfRows != nil:
+            return numberOfRows!
+        case let .Year(numberOfRows) where numberOfRows != nil:
+            return numberOfRows!
+        case let .Month(numberOfRows) where numberOfRows != nil:
+            return numberOfRows!
+        case let .Week(numberOfRows) where numberOfRows != nil:
+            return numberOfRows!
+        case let .Day(numberOfRows) where numberOfRows != nil:
+            return numberOfRows!
         default:
-            return -1
+            return comp.defaultRowCount
         }
     }
     
@@ -466,17 +557,17 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
         }
     }
     
-    private func getComponentTypeForPickerComponentPosition(componentPostiion: Int) -> Int {
+    private func getComponentForPickerComponentPosition(componentPostiion: Int) -> Components {
         
         switch (componentPostiion) {
         case 0:
-            return self.componentsArray![0].rawValue
+            return self.componentsArray![0]
         case 1:
-            return self.componentsArray![1].rawValue
+            return self.componentsArray![1]
         case 2:
-            return self.componentsArray![2].rawValue
+            return self.componentsArray![2]
         default:
-            return -1
+            return .None
         }
         
     }
@@ -500,7 +591,7 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     
     private func getPluralTextForPickerComponentPosition(componentPosition: Int) -> String {
         
-        switch Components(rawValue: self.getComponentTypeForPickerComponentPosition(componentPosition))! {
+        switch self.getComponentForPickerComponentPosition(componentPosition) {
         case .Hour:
             return hoursString
         case .Minute:
@@ -523,7 +614,7 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     
     private func getSingularTextForPickerComponentPosition(componentPosition: Int) -> String {
         
-        switch Components(rawValue: self.getComponentTypeForPickerComponentPosition(componentPosition))! {
+        switch self.getComponentForPickerComponentPosition(componentPosition)  {
         case .Hour:
             return hourString
         case .Minute:
@@ -546,7 +637,7 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     
     private func convertComponentsDurationToSeconds(componentsPosition: Int) -> Int {
         
-        switch Components(rawValue: self.getComponentTypeForPickerComponentPosition(componentsPosition))! {
+        switch self.getComponentForPickerComponentPosition(componentsPosition)  {
             // Convert everything to seconds.
         case .Hour:
             return (self.pickerView.selectedRowInComponent(componentsPosition) * 60 * 60)
@@ -592,7 +683,7 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     private func setPickerToTimeInterval(interval: NSTimeInterval, animated: Bool) {
         
         let time = secondsToHoursMinutesSeconds(Int(interval))
-
+        
         switch self.numberOfComponents {
         case 1:
             pickerView.selectRow(time.hours, inComponent: 0, animated: animated)
@@ -619,7 +710,7 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
     
     private func setPickerComponentsToValues(componentOneValue: Int?, componentTwoValue: Int?,
         componentThreeValue: Int?, animated: Bool) {
-        
+            
             
             switch self.numberOfComponents {
             case 1:
@@ -682,7 +773,7 @@ public class LETimeIntervalPicker: UIControl, UIPickerViewDataSource, UIPickerVi
             return ""
         }
         
-        switch Components(rawValue: self.getComponentTypeForPickerComponentPosition(componentPosition))! {
+        switch self.getComponentForPickerComponentPosition(componentPosition) {
         case .Hour:
             return "\(self.pickerView.selectedRowInComponent(componentPosition))h"
         case .Minute:
