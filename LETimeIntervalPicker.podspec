@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "LETimeIntervalPicker"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "A UIDatePicker for time intervals."
   s.description      = <<-DESC
                        LETimeIntervalPicker lets you pick a time interval with hours, minutes and seconds.
