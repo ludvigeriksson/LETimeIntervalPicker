@@ -1,6 +1,5 @@
 # LETimeIntervalPicker
 
-[![CI Status](http://img.shields.io/travis/ludvigeriksson/LETimeIntervalPicker.svg?style=flat)](https://travis-ci.org/ludvigeriksson/LETimeIntervalPicker)
 [![Version](https://img.shields.io/cocoapods/v/LETimeIntervalPicker.svg?style=flat)](http://cocoapods.org/pods/LETimeIntervalPicker)
 [![License](https://img.shields.io/cocoapods/l/LETimeIntervalPicker.svg?style=flat)](http://cocoapods.org/pods/LETimeIntervalPicker)
 [![Platform](https://img.shields.io/cocoapods/p/LETimeIntervalPicker.svg?style=flat)](http://cocoapods.org/pods/LETimeIntervalPicker)
