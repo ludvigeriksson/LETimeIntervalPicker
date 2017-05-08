@@ -1,0 +1,808 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19D5032A25B5F3CA2EEC54C95FFD0033 /* LETimeIntervalPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E8D27E7C082E90A524B92075022F05 /* LETimeIntervalPicker-dummy.m */; };
+		3CA7AD8B3E182D942A5F34EDC5207DD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		4DA28072A9107E697A6C26B97CEEC084 /* Pods-LETimeIntervalPicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EC654656370AC03C86BADB641E1911 /* Pods-LETimeIntervalPicker_Tests-dummy.m */; };
+		534C037ACD4E2EF861B1AB62CA8B3AA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		659FBA3FDE1EB4CF4A67F5F817DE3129 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		83618D721EC06E00002474E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83618D741EC06E00002474E5 /* InfoPlist.strings */; };
+		83618D781EC06E00002474E5 /* LETimeIntervalPickerLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83618D7A1EC06E00002474E5 /* LETimeIntervalPickerLocalizable.strings */; };
+		83618D7D1EC06E01002474E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83618D7F1EC06E01002474E5 /* InfoPlist.strings */; };
+		83618D831EC06E02002474E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83618D851EC06E02002474E5 /* InfoPlist.strings */; };
+		8D9D52B2669A40AF63D480F9D1C60E9D /* LETimeIntervalPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E2F8A07EBBDBF835786E485FF67C29B /* LETimeIntervalPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93DD7537B4D208C79D1AF48CF2E7A5C3 /* Pods-LETimeIntervalPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5AA621A25EB7B9AFEC5EACF257948F /* Pods-LETimeIntervalPicker_Example-dummy.m */; };
+		9DDF091973ACF1F7D3EA6C973CB3BC56 /* LETimeIntervalPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E81DAF5B787D3E11B85568C0E3C05C /* LETimeIntervalPicker.swift */; };
+		B0BE7401F288E00BA82391C3919F7D45 /* Pods-LETimeIntervalPicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 90E71C51F4217CF8A403A6C5766F70DD /* Pods-LETimeIntervalPicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDD93FF686488FFB409C7CE643E182AF /* Pods-LETimeIntervalPicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EB159E2C8D74ECFFBE6BA1074B85D2C /* Pods-LETimeIntervalPicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8263E53B69F162ACF617F0E183F30B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2984B755CE7AC965E6FF85BD6C24BCE5;
+			remoteInfo = LETimeIntervalPicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		132AE5E0FA8DCDE202AB0D19CA8B03AF /* Pods-LETimeIntervalPicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LETimeIntervalPicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		18BD41F3AAFEC89E2E577568B7042084 /* Pods-LETimeIntervalPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LETimeIntervalPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		23E81DAF5B787D3E11B85568C0E3C05C /* LETimeIntervalPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LETimeIntervalPicker.swift; sourceTree = "<group>"; };
+		2CA5B60682F19A3F3B1DD171D6F439FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EB159E2C8D74ECFFBE6BA1074B85D2C /* Pods-LETimeIntervalPicker_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LETimeIntervalPicker_Example-umbrella.h"; sourceTree = "<group>"; };
+		30D17CD0ECB5DDAD6032313D862BA058 /* Pods-LETimeIntervalPicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LETimeIntervalPicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		33ED505D8BEB514A8463F0446C29A944 /* Pods_LETimeIntervalPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LETimeIntervalPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35B309999A6FD79857B37729917A27DF /* LETimeIntervalPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LETimeIntervalPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D3754DBF54A867722A3D5D91741FCB7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		428DC2BBB39C072574FB72CD20F54E73 /* Pods-LETimeIntervalPicker_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LETimeIntervalPicker_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4D6033BF27A68394C4373B825D9783EC /* Pods-LETimeIntervalPicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LETimeIntervalPicker_Tests-resources.sh"; sourceTree = "<group>"; };
+		5EC795E5C629BACF2B699BEBA96A4369 /* Pods-LETimeIntervalPicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LETimeIntervalPicker_Example-frameworks.sh"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6AA5AD6F2627CEA39D4354A0DAFEFFEB /* Pods-LETimeIntervalPicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LETimeIntervalPicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7AA418FB9549CC2F18BC3F63A639D487 /* Pods-LETimeIntervalPicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LETimeIntervalPicker_Example.modulemap"; sourceTree = "<group>"; };
+		7F9CA1A4C8D137BB90831E7510E55941 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83618D731EC06E00002474E5 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		83618D791EC06E00002474E5 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LETimeIntervalPickerLocalizable.strings; sourceTree = "<group>"; };
+		83618D7E1EC06E01002474E5 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		83618D841EC06E02002474E5 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		83618D861EC06E21002474E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LETimeIntervalPickerLocalizable.strings; sourceTree = "<group>"; };
+		8E2F8A07EBBDBF835786E485FF67C29B /* LETimeIntervalPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LETimeIntervalPicker-umbrella.h"; sourceTree = "<group>"; };
+		90E71C51F4217CF8A403A6C5766F70DD /* Pods-LETimeIntervalPicker_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LETimeIntervalPicker_Tests-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95DE3D841A09B1618F78483457728CCB /* LETimeIntervalPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LETimeIntervalPicker-prefix.pch"; sourceTree = "<group>"; };
+		A536E77B656E1A1D2C912A43DDD3D75E /* LETimeIntervalPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LETimeIntervalPicker.xcconfig; sourceTree = "<group>"; };
+		B70C9D976BAD918C2414F265C7867835 /* Pods-LETimeIntervalPicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LETimeIntervalPicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BD5AA621A25EB7B9AFEC5EACF257948F /* Pods-LETimeIntervalPicker_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LETimeIntervalPicker_Example-dummy.m"; sourceTree = "<group>"; };
+		BF732376B0220186644F403EFDB4CB55 /* Pods-LETimeIntervalPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LETimeIntervalPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C75F019C18868FEAECD43EF126B32EED /* Pods-LETimeIntervalPicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LETimeIntervalPicker_Tests.modulemap"; sourceTree = "<group>"; };
+		C9EEB769F1CC22B43A2AB02FBD308B3A /* Pods-LETimeIntervalPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LETimeIntervalPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		CD03C0297237CDC565469CCDBFE3488A /* Pods-LETimeIntervalPicker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LETimeIntervalPicker_Example-resources.sh"; sourceTree = "<group>"; };
+		D09205EABB4874D3DB51B0C80D861F4D /* Pods_LETimeIntervalPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LETimeIntervalPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3EC654656370AC03C86BADB641E1911 /* Pods-LETimeIntervalPicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LETimeIntervalPicker_Tests-dummy.m"; sourceTree = "<group>"; };
+		D4E8D27E7C082E90A524B92075022F05 /* LETimeIntervalPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LETimeIntervalPicker-dummy.m"; sourceTree = "<group>"; };
+		D5602A8DDC0F4AB58EB402ECFFA09329 /* Pods-LETimeIntervalPicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LETimeIntervalPicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		D9F8720541FC8EF5EBC1BA0AA6E90F8F /* LETimeIntervalPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LETimeIntervalPicker.modulemap; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2953B24238B66DE7B475DE2C596EA261 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				659FBA3FDE1EB4CF4A67F5F817DE3129 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2D6B69F91558E7BF86821D447CFBC6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				534C037ACD4E2EF861B1AB62CA8B3AA0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA8031D8DD49EE322D9F30ED2F0F45DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CA7AD8B3E182D942A5F34EDC5207DD0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0249CA8FE27756C497757C51259C956D /* LETimeIntervalPicker */ = {
+			isa = PBXGroup;
+			children = (
+				6D343B259959831117D43075A28ACDD2 /* LETimeIntervalPicker */,
+				E5C60B889E2EB057EAF3E03959F3F286 /* Support Files */,
+			);
+			name = LETimeIntervalPicker;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		1FEFB2D30004B52F964BAFB479E79CA3 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0249CA8FE27756C497757C51259C956D /* LETimeIntervalPicker */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		369FF34913ED7AC8546CDBF6F29CF758 /* Pods-LETimeIntervalPicker_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				83618D851EC06E02002474E5 /* InfoPlist.strings */,
+				3D3754DBF54A867722A3D5D91741FCB7 /* Info.plist */,
+				C75F019C18868FEAECD43EF126B32EED /* Pods-LETimeIntervalPicker_Tests.modulemap */,
+				428DC2BBB39C072574FB72CD20F54E73 /* Pods-LETimeIntervalPicker_Tests-acknowledgements.markdown */,
+				6AA5AD6F2627CEA39D4354A0DAFEFFEB /* Pods-LETimeIntervalPicker_Tests-acknowledgements.plist */,
+				D3EC654656370AC03C86BADB641E1911 /* Pods-LETimeIntervalPicker_Tests-dummy.m */,
+				D5602A8DDC0F4AB58EB402ECFFA09329 /* Pods-LETimeIntervalPicker_Tests-frameworks.sh */,
+				4D6033BF27A68394C4373B825D9783EC /* Pods-LETimeIntervalPicker_Tests-resources.sh */,
+				90E71C51F4217CF8A403A6C5766F70DD /* Pods-LETimeIntervalPicker_Tests-umbrella.h */,
+				132AE5E0FA8DCDE202AB0D19CA8B03AF /* Pods-LETimeIntervalPicker_Tests.debug.xcconfig */,
+				C9EEB769F1CC22B43A2AB02FBD308B3A /* Pods-LETimeIntervalPicker_Tests.release.xcconfig */,
+			);
+			name = "Pods-LETimeIntervalPicker_Tests";
+			path = "Target Support Files/Pods-LETimeIntervalPicker_Tests";
+			sourceTree = "<group>";
+		};
+		5898A26BE48B3DA4C8F85186A9091D9F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				23E81DAF5B787D3E11B85568C0E3C05C /* LETimeIntervalPicker.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6D343B259959831117D43075A28ACDD2 /* LETimeIntervalPicker */ = {
+			isa = PBXGroup;
+			children = (
+				5898A26BE48B3DA4C8F85186A9091D9F /* Classes */,
+			);
+			path = LETimeIntervalPicker;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				1FEFB2D30004B52F964BAFB479E79CA3 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				89F0949C7C48492772402351BA22EC2E /* Products */,
+				87DC89303EE9F98FB9CC1A818C54ABF9 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		87DC89303EE9F98FB9CC1A818C54ABF9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C903800CCA65C1ED14F51E2F857C0A35 /* Pods-LETimeIntervalPicker_Example */,
+				369FF34913ED7AC8546CDBF6F29CF758 /* Pods-LETimeIntervalPicker_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		89F0949C7C48492772402351BA22EC2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35B309999A6FD79857B37729917A27DF /* LETimeIntervalPicker.framework */,
+				D09205EABB4874D3DB51B0C80D861F4D /* Pods_LETimeIntervalPicker_Example.framework */,
+				33ED505D8BEB514A8463F0446C29A944 /* Pods_LETimeIntervalPicker_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C903800CCA65C1ED14F51E2F857C0A35 /* Pods-LETimeIntervalPicker_Example */ = {
+			isa = PBXGroup;
+			children = (
+				83618D741EC06E00002474E5 /* InfoPlist.strings */,
+				7F9CA1A4C8D137BB90831E7510E55941 /* Info.plist */,
+				7AA418FB9549CC2F18BC3F63A639D487 /* Pods-LETimeIntervalPicker_Example.modulemap */,
+				B70C9D976BAD918C2414F265C7867835 /* Pods-LETimeIntervalPicker_Example-acknowledgements.markdown */,
+				30D17CD0ECB5DDAD6032313D862BA058 /* Pods-LETimeIntervalPicker_Example-acknowledgements.plist */,
+				BD5AA621A25EB7B9AFEC5EACF257948F /* Pods-LETimeIntervalPicker_Example-dummy.m */,
+				5EC795E5C629BACF2B699BEBA96A4369 /* Pods-LETimeIntervalPicker_Example-frameworks.sh */,
+				CD03C0297237CDC565469CCDBFE3488A /* Pods-LETimeIntervalPicker_Example-resources.sh */,
+				2EB159E2C8D74ECFFBE6BA1074B85D2C /* Pods-LETimeIntervalPicker_Example-umbrella.h */,
+				18BD41F3AAFEC89E2E577568B7042084 /* Pods-LETimeIntervalPicker_Example.debug.xcconfig */,
+				BF732376B0220186644F403EFDB4CB55 /* Pods-LETimeIntervalPicker_Example.release.xcconfig */,
+			);
+			name = "Pods-LETimeIntervalPicker_Example";
+			path = "Target Support Files/Pods-LETimeIntervalPicker_Example";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E5C60B889E2EB057EAF3E03959F3F286 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				83618D7F1EC06E01002474E5 /* InfoPlist.strings */,
+				83618D7A1EC06E00002474E5 /* LETimeIntervalPickerLocalizable.strings */,
+				2CA5B60682F19A3F3B1DD171D6F439FA /* Info.plist */,
+				D9F8720541FC8EF5EBC1BA0AA6E90F8F /* LETimeIntervalPicker.modulemap */,
+				A536E77B656E1A1D2C912A43DDD3D75E /* LETimeIntervalPicker.xcconfig */,
+				D4E8D27E7C082E90A524B92075022F05 /* LETimeIntervalPicker-dummy.m */,
+				95DE3D841A09B1618F78483457728CCB /* LETimeIntervalPicker-prefix.pch */,
+				8E2F8A07EBBDBF835786E485FF67C29B /* LETimeIntervalPicker-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/LETimeIntervalPicker";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4546958165205825110ADCD4A4EBA155 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0BE7401F288E00BA82391C3919F7D45 /* Pods-LETimeIntervalPicker_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C3AB871B915FD3C0C674B5F100899AA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDD93FF686488FFB409C7CE643E182AF /* Pods-LETimeIntervalPicker_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DA00D191D8689F4154FB6F19DBCB8E9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D9D52B2669A40AF63D480F9D1C60E9D /* LETimeIntervalPicker-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2984B755CE7AC965E6FF85BD6C24BCE5 /* LETimeIntervalPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09DFDA203DCBDCE62CBA1191F7DC62A3 /* Build configuration list for PBXNativeTarget "LETimeIntervalPicker" */;
+			buildPhases = (
+				A6C97EB64A347F9BF5B966173994CF94 /* Sources */,
+				DA8031D8DD49EE322D9F30ED2F0F45DE /* Frameworks */,
+				8DA00D191D8689F4154FB6F19DBCB8E9 /* Headers */,
+				83618D771EC06E00002474E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LETimeIntervalPicker;
+			productName = LETimeIntervalPicker;
+			productReference = 35B309999A6FD79857B37729917A27DF /* LETimeIntervalPicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8BDDC07AF70A4F911DA5561E1275A4C4 /* Pods-LETimeIntervalPicker_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71CF2EEB2664C707A1683DDD26411B8A /* Build configuration list for PBXNativeTarget "Pods-LETimeIntervalPicker_Tests" */;
+			buildPhases = (
+				ABE989367FC238DD4BB88BB83BDA00EB /* Sources */,
+				C2D6B69F91558E7BF86821D447CFBC6B /* Frameworks */,
+				4546958165205825110ADCD4A4EBA155 /* Headers */,
+				83618D821EC06E01002474E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-LETimeIntervalPicker_Tests";
+			productName = "Pods-LETimeIntervalPicker_Tests";
+			productReference = 33ED505D8BEB514A8463F0446C29A944 /* Pods_LETimeIntervalPicker_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CF938C53465E64EE67CD5AFA7CD19808 /* Pods-LETimeIntervalPicker_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79CE4508911EEDD933B72FAEE7461998 /* Build configuration list for PBXNativeTarget "Pods-LETimeIntervalPicker_Example" */;
+			buildPhases = (
+				222094C803F2BD1D2CF8B91EED6CBE65 /* Sources */,
+				2953B24238B66DE7B475DE2C596EA261 /* Frameworks */,
+				8C3AB871B915FD3C0C674B5F100899AA /* Headers */,
+				83618D711EC06DFF002474E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8ACAA1C0AC24A9BC72C6CA1A0F691A35 /* PBXTargetDependency */,
+			);
+			name = "Pods-LETimeIntervalPicker_Example";
+			productName = "Pods-LETimeIntervalPicker_Example";
+			productReference = D09205EABB4874D3DB51B0C80D861F4D /* Pods_LETimeIntervalPicker_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				sv,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 89F0949C7C48492772402351BA22EC2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2984B755CE7AC965E6FF85BD6C24BCE5 /* LETimeIntervalPicker */,
+				CF938C53465E64EE67CD5AFA7CD19808 /* Pods-LETimeIntervalPicker_Example */,
+				8BDDC07AF70A4F911DA5561E1275A4C4 /* Pods-LETimeIntervalPicker_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83618D711EC06DFF002474E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83618D721EC06E00002474E5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83618D771EC06E00002474E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83618D781EC06E00002474E5 /* LETimeIntervalPickerLocalizable.strings in Resources */,
+				83618D7D1EC06E01002474E5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83618D821EC06E01002474E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83618D831EC06E02002474E5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		222094C803F2BD1D2CF8B91EED6CBE65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93DD7537B4D208C79D1AF48CF2E7A5C3 /* Pods-LETimeIntervalPicker_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6C97EB64A347F9BF5B966173994CF94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19D5032A25B5F3CA2EEC54C95FFD0033 /* LETimeIntervalPicker-dummy.m in Sources */,
+				9DDF091973ACF1F7D3EA6C973CB3BC56 /* LETimeIntervalPicker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABE989367FC238DD4BB88BB83BDA00EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DA28072A9107E697A6C26B97CEEC084 /* Pods-LETimeIntervalPicker_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8ACAA1C0AC24A9BC72C6CA1A0F691A35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LETimeIntervalPicker;
+			target = 2984B755CE7AC965E6FF85BD6C24BCE5 /* LETimeIntervalPicker */;
+			targetProxy = D8263E53B69F162ACF617F0E183F30B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		83618D741EC06E00002474E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83618D731EC06E00002474E5 /* sv */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		83618D7A1EC06E00002474E5 /* LETimeIntervalPickerLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83618D791EC06E00002474E5 /* sv */,
+				83618D861EC06E21002474E5 /* en */,
+			);
+			name = LETimeIntervalPickerLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		83618D7F1EC06E01002474E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83618D7E1EC06E01002474E5 /* sv */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		83618D851EC06E02002474E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83618D841EC06E02002474E5 /* sv */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		345CC476DF4A7516DBD2220CF5035FF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78FEBDCACD169688E5658DE520137BC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A536E77B656E1A1D2C912A43DDD3D75E /* LETimeIntervalPicker.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LETimeIntervalPicker/LETimeIntervalPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LETimeIntervalPicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LETimeIntervalPicker/LETimeIntervalPicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LETimeIntervalPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		89D8B124E39DBC1D4A5790ABA7C1B028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18BD41F3AAFEC89E2E577568B7042084 /* Pods-LETimeIntervalPicker_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LETimeIntervalPicker_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LETimeIntervalPicker_Example/Pods-LETimeIntervalPicker_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LETimeIntervalPicker_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		917E42A0C31FF7F362D540B36E4AEB79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF732376B0220186644F403EFDB4CB55 /* Pods-LETimeIntervalPicker_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LETimeIntervalPicker_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LETimeIntervalPicker_Example/Pods-LETimeIntervalPicker_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LETimeIntervalPicker_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A20DA292A0BD75C9DA847B43C4E224EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A536E77B656E1A1D2C912A43DDD3D75E /* LETimeIntervalPicker.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LETimeIntervalPicker/LETimeIntervalPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LETimeIntervalPicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LETimeIntervalPicker/LETimeIntervalPicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = LETimeIntervalPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D235707B668EC6BAAC62779C83362A7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9EEB769F1CC22B43A2AB02FBD308B3A /* Pods-LETimeIntervalPicker_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LETimeIntervalPicker_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LETimeIntervalPicker_Tests/Pods-LETimeIntervalPicker_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LETimeIntervalPicker_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E502613A16E28FD7BF257C9864DF0181 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 132AE5E0FA8DCDE202AB0D19CA8B03AF /* Pods-LETimeIntervalPicker_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-LETimeIntervalPicker_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LETimeIntervalPicker_Tests/Pods-LETimeIntervalPicker_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_LETimeIntervalPicker_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		09DFDA203DCBDCE62CBA1191F7DC62A3 /* Build configuration list for PBXNativeTarget "LETimeIntervalPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78FEBDCACD169688E5658DE520137BC0 /* Debug */,
+				A20DA292A0BD75C9DA847B43C4E224EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				345CC476DF4A7516DBD2220CF5035FF3 /* Debug */,
+				717E77604BFBB04BEAF56608A1CB2EDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71CF2EEB2664C707A1683DDD26411B8A /* Build configuration list for PBXNativeTarget "Pods-LETimeIntervalPicker_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E502613A16E28FD7BF257C9864DF0181 /* Debug */,
+				D235707B668EC6BAAC62779C83362A7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79CE4508911EEDD933B72FAEE7461998 /* Build configuration list for PBXNativeTarget "Pods-LETimeIntervalPicker_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D8B124E39DBC1D4A5790ABA7C1B028 /* Debug */,
+				917E42A0C31FF7F362D540B36E4AEB79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module LETimeIntervalPicker {
+  umbrella header "LETimeIntervalPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

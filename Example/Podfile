@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LETimeIntervalPicker_Example' do
+  pod 'LETimeIntervalPicker', :path => '../'
+
+  target 'LETimeIntervalPicker_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

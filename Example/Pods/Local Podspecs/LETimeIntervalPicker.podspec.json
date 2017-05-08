@@ -1,0 +1,22 @@
+{
+  "name": "LETimeIntervalPicker",
+  "version": "0.1.0",
+  "summary": "A short description of LETimeIntervalPicker.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/ludvigeriksson/LETimeIntervalPicker",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ludvigeriksson": "ludvigeriksson@icloud.com"
+  },
+  "source": {
+    "git": "https://github.com/ludvigeriksson/LETimeIntervalPicker.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "LETimeIntervalPicker/Classes/**/*"
+}

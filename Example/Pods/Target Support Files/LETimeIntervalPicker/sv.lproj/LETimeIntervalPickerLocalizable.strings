@@ -1,0 +1,27 @@
+"days-full-singular"        = "dag";
+"days-short-singular"       = "dag";
+"days-abbreviated-singular" = "d";
+"days-full-plural"          = "dagar";
+"days-short-plural"         = "dagar";
+"days-abbreviated-plural"   = "d";
+
+"hours-full-singular"        = "timme";
+"hours-short-singular"       = "tim";
+"hours-abbreviated-singular" = "h";
+"hours-full-plural"          = "timmar";
+"hours-short-plural"         = "tim";
+"hours-abbreviated-plural"   = "h";
+
+"minutes-full-singular"        = "minut";
+"minutes-short-singular"       = "min";
+"minutes-abbreviated-singular" = "m";
+"minutes-full-plural"          = "minuter";
+"minutes-short-plural"         = "min";
+"minutes-abbreviated-plural"   = "m";
+
+"seconds-full-singular"        = "sekund";
+"seconds-short-singular"       = "sek";
+"seconds-abbreviated-singular" = "s";
+"seconds-full-plural"          = "sekunder";
+"seconds-short-plural"         = "sek";
+"seconds-abbreviated-plural"   = "s";
