@@ -26,6 +26,13 @@ import UIKit
         case seconds
     }
     
+    /// How the picker displays component names
+    ///
+    /// See LETimeIntervalPickerLocalizable.strings for local variants.
+    ///
+    /// - full: days / hours / minutes / seconds
+    /// - short: days / hrs / mins / secs
+    /// - abbreviated: d / h / m / s
     public enum UnitsStyle: String {
         case full
         case short
@@ -33,8 +40,10 @@ import UIKit
     }
     
     fileprivate struct Constants {
-        static let standardComponentSpacing: CGFloat = 5   // UIPickerView has a 5 point space between components
-        static let labelSpacing: CGFloat = 5               // Spacing between picker numbers and labels
+        static let standardComponentSpacing: CGFloat = 5    // UIPickerView has a 5 point space between components
+        static let labelSpacing: CGFloat = 5                // Spacing between picker numbers and labels
+        
+        static let numberOfLoops = 1000  // Loops to appear to be infinite
         
         static let componentValues: [Component: TimeInterval] = [
             .days: 86_400,
@@ -53,6 +62,7 @@ import UIKit
     
     // MARK: Getting & setting the time interval
     
+    /// The time interval currently being displayed in the picker
     public var timeInterval: TimeInterval {
         get {
             return getTimeInterval()
@@ -62,36 +72,77 @@ import UIKit
         }
     }
     
+    /// Animates the time interval change by spinning the different picker components
+    ///
+    /// - Parameter timeInterval: The time interval to animate to
     public func setTimeIntervalAnimated(_ timeInterval: TimeInterval) {
         setTimeInterval(timeInterval: timeInterval, animated: true)
     }
     
+    /// Returns the time interval currently being displayed in the picker
+    /// as amounts of each component
+    ///
+    /// - Returns: Amount of each component currently displayed
     public func timeIntervalAsComponents() -> [Component: Int] {
         var timeInterval: [Component: Int] = [:]
         for (index, component) in components.enumerated() {
-            timeInterval[component] = pickerView.selectedRow(inComponent: index)
+            var selected = pickerView.selectedRow(inComponent: index)
+            if loops {
+                selected = selected % numberOfRows[component]!
+            }
+            timeInterval[component] = selected
         }
         return timeInterval
     }
     
     // MARK: Customizing functionality & appearance
     
+    /// The components that the picker displays, can be set to any components
+    /// in any order
+    ///
+    /// Defaults to hours, minutes & seconds
     public var components: [Component] = [.hours, .minutes, .seconds] {
         didSet {
             reloadData()
         }
     }
     
+    /// Customize how many rows should be displayed for each component
+    /// 
+    /// Default values:
+    ///   - days: 365
+    ///   - hours: 24
+    ///   - minutes: 60
+    ///   - seconds: 60
+    ///
+    /// - Parameters:
+    ///   - numberOfRows: The row count, including 0
+    ///   - component: The component to set the row count for
     public func set(numberOfRows: Int, for component: Component) {
         self.numberOfRows[component] = numberOfRows
         reloadData()
+        resetToDefaultValue()
     }
 
+    /// The font used to display numbers in the picker
+    ///
+    /// Defaults to a system font of size 17
     public var numberFont = UIFont.systemFont(ofSize: 17) { didSet { reloadData() } }
     
+    /// The font used to display component names in the picker
+    ///
+    /// Defaults to a system font of size 17
     public var textFont = UIFont.systemFont(ofSize: 17) { didSet { reloadData() } }
     
+    /// The style to use for displaying the component names
+    ///
+    /// See LETimeIntervalPicker.UnitsStyle for details
     public var unitsStyle = UnitsStyle.full
+    
+    /// Whether the picker should loop around to appear as being infinite
+    ///
+    /// Default value is false
+    public var loops = false { didSet { reloadData() } }
 
     // MARK: Reloading
     
@@ -108,7 +159,13 @@ import UIKit
     private func getTimeInterval() -> TimeInterval {
         var total: TimeInterval = 0
         for (index, component) in components.enumerated() {
-            let selected = pickerView.selectedRow(inComponent: index)
+            var selected = pickerView.selectedRow(inComponent: index)
+            print(selected)
+            if loops {
+                selected = selected % numberOfRows[component]!
+            }
+            print(selected)
+            print()
             total += Constants.componentValues[component]! * TimeInterval(selected)
         }
         return total
@@ -133,9 +190,24 @@ import UIKit
                 )
             }
             let index = components.index(of: component)!
+            if loops {
+                let selectedRow = pickerView.selectedRow(inComponent: index)
+                let selectedValue = selectedRow % numberOfRows[component]!
+                componentCount += (selectedRow - selectedValue)
+            }
             pickerView.selectRow(componentCount, inComponent: index, animated: animated)
         }
         sendActions(for: .valueChanged)
+    }
+    
+    private func resetToDefaultValue() {
+        for (i, component) in components.enumerated() {
+            var count = 0
+            if loops {
+                count = numberOfRows[component]! * (Constants.numberOfLoops / 2)
+            }
+            pickerView.selectRow(count, inComponent: i, animated: false)
+        }
     }
     
     // MARK: - Layout calculations
@@ -264,6 +336,7 @@ import UIKit
         updateTextLabels()
         setupPickerView()
         reloadData()
+        resetToDefaultValue()
     }
     
     fileprivate func setupPickerView() {
@@ -283,10 +356,18 @@ extension LETimeIntervalPicker: UIPickerViewDataSource {
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if loops {
+            return numberOfRows[components[component]]! * Constants.numberOfLoops
+        }
         return numberOfRows[components[component]]!
     }
     
     public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        var row = row
+        if loops {
+            row %= numberOfRows[components[component]]!
+        }
         
         let size = pickerView.rowSize(forComponent: component)
         
@@ -318,6 +399,12 @@ extension LETimeIntervalPicker: UIPickerViewDelegate {
     }
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if loops {
+            let rowCount = numberOfRows[components[component]]!
+            let value = row % rowCount
+            let middle = rowCount * (Constants.numberOfLoops / 2) + value
+            pickerView.selectRow(middle, inComponent: component, animated: false)
+        }
         sendActions(for: .valueChanged)
     }
 }
